@@ -2,15 +2,13 @@
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
-    box-sizing: border-box;
 }
 
 body {
     background: url(weather.jpg);
-    background-size: cover;
     background-repeat:no-repeat;
     background-attachment: fixed;
-    object-fit: contain;
+    background-size: cover;
 }
 
 .card {
@@ -68,8 +66,6 @@ body {
     height: auto;
     padding: 0%;
     margin: 0%;
-    /* object-fit: cover; */
-    
 }
 
 button#refreshButton.circle-button {
@@ -105,5 +101,13 @@ button#refreshButton.circle-button {
 img.weather-icon {
     width: 100px;
     height: auto;
-    margin-top: 15px;
+    margin-top: 20px;
+}
+
+p#timeDisplay {
+    font-weight: bolder;
+    margin-left: 50px;
+    color: #fff;
+    margin-right: 300px;
+    font-size: 30px;
 }
