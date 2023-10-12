@@ -10,11 +10,12 @@ body {
     background-size: cover;
     background-repeat:no-repeat;
     background-attachment: fixed;
+    object-fit: contain;
 }
 
 .card {
     width: 90%;
-    max-width: 470px;
+    max-width: 515px;
     background: linear-gradient(1deg, #2c4b42, #5b548a);
     color: #fff;
     margin: 100px auto 0;
@@ -60,6 +61,21 @@ body {
 
 .search button:hover {
     background: #097a4b;
+}
+
+.circle-button img {
+    width: 50px;
+    height: auto;
+    padding: 0%;
+    margin: 0%;
+    /* object-fit: cover; */
+    
+}
+
+button#refreshButton.circle-button {
+    padding: 0px;
+    background-color: transparent;
+    object-fit: cover;
 }
 
 .detail {
