@@ -8,7 +8,6 @@ const weatherIcon = document.querySelector('.weather-icon');
 async function checkWeather(city) {
   if (!city) {
     // Handle empty input
-    // You can display a message or set default values here
     document.querySelector('.city').innerHTML = '--';
     document.querySelector('.temp').innerHTML = '--';
     document.querySelector('.humidity').innerHTML = '--';
@@ -24,7 +23,7 @@ async function checkWeather(city) {
   } else {
     let data = await res.json();
 
-    console.log(data);
+    // console.log(data);
 
     document.querySelector('.city').innerHTML = data.name;
     const celsius = Math.round(data.main.temp - 273.15);
@@ -32,9 +31,8 @@ async function checkWeather(city) {
     document.querySelector('.humidity').innerHTML = data.main.humidity + '%';
     document.querySelector('.wind').innerHTML = data.wind.speed + ' km/h';
 
-    const weatherMain = data.weather[0].main.toLowerCase(); // Convert to lowercase for consistency
+    const weatherMain = data.weather[0].main.toLowerCase();
 
-// Define a mapping of weather conditions to the corresponding local image file paths
 const weatherIcons = {
   clouds: 'images/clouds.png',
   clear: 'images/clear.png',
@@ -43,12 +41,11 @@ const weatherIcons = {
   mist: 'images/mist.png',
 };
 
-// Check if the weather condition exists in the mapping
+// Check if the weather condition exists
 if (weatherMain in weatherIcons) {
     weatherIcon.src = weatherIcons[weatherMain];
 } else {
-    // If the condition doesn't match, set a default icon or handle it as needed
-    weatherIcon.src = 'images/default.png'; // Adjust the path to your default icon
+    weatherIcon.src = 'images/default.png';
 }
 
   }
